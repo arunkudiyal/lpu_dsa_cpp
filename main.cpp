@@ -1,5 +1,6 @@
 // iostream is the header file or preprocessor for I/O of C++
 #include<iostream>
+#include<string>
 // what namesapcae from the header file you want to use
 // std :- cin >> ; cout << ; endl
 using namespace std;
@@ -88,20 +89,53 @@ int main() {
     // cout << str2 << endl;
 
     // Q:- Why we say string to be not a PDT but an object?
-    string str;                                             // c++ treats string as an object
-    getline(cin, str);                                      // delimiter :- enter
-    cout << str << endl;
+    // string str;                                             // c++ treats string as an object
+    // getline(cin, str);                                      // delimiter :- enter
+    // cout << str << endl;
 
     // Access methods from the string class
     // 1. on run-time, you can expand the value of a string -> push_back(char)
     // ->  push_back(char) :- appends a character to the string
-    str.push_back('W');
-    cout << str << endl;
+    // str.push_back('W');
+    // cout << str << endl;
 
     // 2. on run-time, you can shrink the value of a string -> pop_back()
     // -> pop_back() :- remove the last charachter from the string
-    str.pop_back();
-    cout << str <<  endl;
+    // str.pop_back();
+    // cout << str <<  endl;
+
+    // object syntax of the string
+    string s1("One");
+    string s2("Two");
+
+    // Different ways of concatening strings
+    // Way - 1 :- using '+'
+    // string s3 = s1 + s2;
+    // cout << s3 << endl; 
+
+    // s1.append(s2);
+    // cout << s1 << endl;
+    // cout << s2 << endl;
+
+    // strcmp & strcat -> string header file -- [HOLD]
+
+    // capacity() - bytes allocated to store the string; capacity() < sizeof() < capacity()
+    cout << s1.capacity() << endl;                             
+    // new string of the no of charac as specified
+    // s1.resize(2);
+    cout << s1 << endl;
+    // total no of charac in a given string -> " " is counted as 1
+    cout << s1.length() << endl;
+
+    // copy() - [HOLD] - CharSquence
+    // swap()
+    cout << s1 << " " << s2 << endl;
+    s1.swap(s2);
+    cout << s1 << " " << s2 << endl;
+
+
+    // 2. Arrays in C++
+    
 
     return 0;
 }
