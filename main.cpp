@@ -7,9 +7,64 @@ using namespace std;
 int main() {
     // C :- printf() & scanf()
     // C++ :- cout << & cin >> 
-    int a;
-    cin >> a;
-    cout << "Hey, user input is - " << a << endl;
+    // int a;
+    // cin >> a;
+    // cout << "Hey, user input is - " << a << endl;
+
+    // data types in cpp
+    // 1. int -> 32bit signed integer | 4 bytes
+    int x;                                              // No memory is assigned to the variable
+    x = 100;                                            // Memory allocation begins
+
+    cout << x << endl;
+    // sizeof() -> memory size of a passed data type
+    cout << sizeof(int) << endl;                        // 4 bytes
+
+    // 2. charachter - -128 to + 127
+    char ch = 'a';
+    cout << ch << endl;
+    char ch2 = 100;                                     // ASCII code of the char
+    cout << ch2 << endl;
+    cout << sizeof(char) << endl;                       // 1 byte
+
+    // 3. boolean -> True / False
+    // bool m = 0;         // false
+    // bool n = 1;         // true
+    // bool z = 10;
+    // bool v = -8;
+    // bool b = -10000;
+    // cout << m << " " << n << " " << z << " " << v << " " << b << endl;
+    // cout << sizeof(bool) << endl;                    // 1 byte
+
+    bool m = true;
+    bool n = false;
+    cout << m  << " " << n << endl;
+
+    // 4. float -> non-real numbers -> decimal point
+    float myFloat = 3.145678937489392729473892;         // 6 precision value
+    cout << myFloat << endl;
+    cout << sizeof(myFloat) << endl;                    // 4 byte
+
+    // 5. wide charachter (wchar_t) :- Charcter pool
+    wchar_t w = L'A';                                   // ASCII value
+    // wchar_t p[] = L"Arun Kudiyal";
+    cout << w << endl;
+    cout << sizeof(w) << endl;
+
+
+    // DATATYPE MODIFIERS
+    // 1. signed
+    // 2. unsigned
+    // 3. short
+    // 4. long
+    // 5. double
+
+    // create a integer which takes 2 bytes of space
+    short int num1 = 32767;                             // -32768 to +32767
+    cout << sizeof(num1) << endl;                       // 2 bytes
+
+    unsigned short int num2 = 32768;                     // +65534
+    cout << sizeof(num2) <<  endl;
 
     return 0;
 }
