@@ -105,8 +105,8 @@ int main() {
     // cout << str <<  endl;
 
     // object syntax of the string
-    string s1("One");
-    string s2("Two");
+    // string s1("One");
+    // string s2("Two");
 
     // Different ways of concatening strings
     // Way - 1 :- using '+'
@@ -120,21 +120,84 @@ int main() {
     // strcmp & strcat -> string header file -- [HOLD]
 
     // capacity() - bytes allocated to store the string; capacity() < sizeof() < capacity()
-    cout << s1.capacity() << endl;                             
-    // new string of the no of charac as specified
-    // s1.resize(2);
-    cout << s1 << endl;
-    // total no of charac in a given string -> " " is counted as 1
-    cout << s1.length() << endl;
+    // cout << s1.capacity() << endl;                             
+    // // new string of the no of charac as specified
+    // // s1.resize(2);
+    // cout << s1 << endl;
+    // // total no of charac in a given string -> " " is counted as 1
+    // cout << s1.length() << endl;
 
-    // copy() - [HOLD] - CharSquence
-    // swap()
-    cout << s1 << " " << s2 << endl;
-    s1.swap(s2);
-    cout << s1 << " " << s2 << endl;
+    // // copy() - [HOLD] - CharSquence
+    // // swap()
+    // cout << s1 << " " << s2 << endl;
+    // s1.swap(s2);
+    // cout << s1 << " " << s2 << endl;
 
 
     // 2. Arrays in C++
+    // Array is a collection of similar type of DTs.
+    // A complex variable is capable to storing multiple values in a single variable.
+    // dataType variableName = variableValue;
+
+    // Syntax_1 :- dataType arrayName[size];
+    // int num[5];                                     // index - 0, 1, 2, 3, 4
+    // // indices :- start = 0; end = size - 1
+
+    // // access the values from the array
+    // // arrayName[index] = value
+    // num[0] = 100;
+    // num[1] = 200;
+    // num[2] = 300;
+    // num[3] = 400;
+    // num[4] = 500;
+
+    // cout << num[0] << " " << num[1] << " " <<  num[2] << " " << num[3] << " " << num[4] << endl;
+
+    // cout << num << endl;                            // 0x16dacb2e4 (address)
+
+    // // If you donot have an idea on the size, you had hard-code the values
+    // string arr2[] = {"This", "is", "a", "string"};
+    // cout << arr2[0] << " -> " << arr2[1] << " -> " <<  arr2[2] << " -> " << arr2[3] << endl;
+
+    // // size of the array
+    // cout << "The size of the array - " << sizeof(num) << endl;          // 20 -> 5 * sizeof(DT)
+    // cout << "The size of the array - " << sizeof(arr2) << endl;         // 24 * 4 = 96
+
+    // // Intersted to find the size of the array
+    // cout << "No of elements in num array - " << sizeof(num) / sizeof(int) << endl; 
+    // cout << "No of elements in arr2 array - " << sizeof(arr2) / sizeof(string) << endl; 
+
+    // loops :- for, while, do-while
+    // starting-point ; end-point (condition) ; inc/dec.
+
+    // 1. for-loop
+    // Q:- If I have to create an infinte for-loop...? 
+    // for(;;) {  }
+
+    // for(start; end-point; inc/dec)
+    // int i = 1;
+    // for(i=1; i <= 5; i++) {
+    //     cout << i << " ";
+    // }
+    // cout << endl;
+    // cout << "Last updated value for post-inc is : " << i << endl;
+
+    // int j = 0;
+    // for(j=0; j < 5; ++j) {
+    //     cout << j << " ";
+    // }
+    // cout << endl;
+    // cout << "Last updated value for pre-inc is : " << j << endl;
+
+    int a = 10;
+    int b = 21;
+    cout << a++ + ++b << endl;          // 10 + 22 = 32
+    cout << a << " " << b << endl;      // 11 22
+
+    for(int i=2; i < 21; i=i+2)          // i :- 1 - 20
+        cout << i << " ";
+    cout << endl;
+
     
 
     return 0;
