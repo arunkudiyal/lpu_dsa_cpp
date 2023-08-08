@@ -189,14 +189,14 @@ int main() {
     // cout << endl;
     // cout << "Last updated value for pre-inc is : " << j << endl;
 
-    int a = 10;
-    int b = 21;
-    cout << a++ + ++b << endl;          // 10 + 22 = 32
-    cout << a << " " << b << endl;      // 11 22
+    // int a = 10;
+    // int b = 21;
+    // cout << a++ + ++b << endl;          // 10 + 22 = 32
+    // cout << a << " " << b << endl;      // 11 22
 
-    for(int i=2; i < 21; i=i+2)          // i :- 1 - 20
-        cout << i << " ";
-    cout << endl;
+    // for(int i=2; i < 21; i=i+2)          // i :- 1 - 20
+    //     cout << i << " ";
+    // cout << endl;
 
-    return 0;
+    // return 0;
 }
