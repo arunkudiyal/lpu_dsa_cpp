@@ -167,36 +167,5 @@ int main() {
     // cout << "No of elements in num array - " << sizeof(num) / sizeof(int) << endl; 
     // cout << "No of elements in arr2 array - " << sizeof(arr2) / sizeof(string) << endl; 
 
-    // loops :- for, while, do-while
-    // starting-point ; end-point (condition) ; inc/dec.
-
-    // 1. for-loop
-    // Q:- If I have to create an infinte for-loop...? 
-    // for(;;) {  }
-
-    // for(start; end-point; inc/dec)
-    // int i = 1;
-    // for(i=1; i <= 5; i++) {
-    //     cout << i << " ";
-    // }
-    // cout << endl;
-    // cout << "Last updated value for post-inc is : " << i << endl;
-
-    // int j = 0;
-    // for(j=0; j < 5; ++j) {
-    //     cout << j << " ";
-    // }
-    // cout << endl;
-    // cout << "Last updated value for pre-inc is : " << j << endl;
-
-    // int a = 10;
-    // int b = 21;
-    // cout << a++ + ++b << endl;          // 10 + 22 = 32
-    // cout << a << " " << b << endl;      // 11 22
-
-    // for(int i=2; i < 21; i=i+2)          // i :- 1 - 20
-    //     cout << i << " ";
-    // cout << endl;
-
     // return 0;
 }
