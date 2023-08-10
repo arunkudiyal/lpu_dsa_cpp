@@ -6,7 +6,8 @@ void print(void* ptr, char ch);
 void print(void* ptr, char ch) {
     if( ch == 'x' ) cout << *((int*) ptr) << endl;
     else if( ch == 'y' ) cout << *((char*) ptr) << endl;
-    else if( ch == 'z' ) cout << *((int*) ptr) << endl;
+    // else if( ch == 'z' ) cout << *((int*)(((char*)ptr))) << endl;
+    else if( ch == 'z' ) cout << (int)*((char*) ptr) << endl;
     else cout << "Invalid";
 }
 
