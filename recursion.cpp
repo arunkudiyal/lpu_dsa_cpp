@@ -4,7 +4,7 @@ using namespace std;
 int fib(int n, int memo[]);
 
 int fib(int n, int memo[]) {
-    // the value of fib(n) was calculated before as a intermediate result
+    // the value of fib(n) was calculated before as an intermediate result
     if( memo[n] != -1 ) return memo[n];
     else if( n == 1 ) return 0;
     else if(n == 2) return 1;
@@ -15,7 +15,7 @@ int fib(int n, int memo[]) {
 int main() {
     int n;
     cin >> n;
-    // create a memo for myself -> Responsible for storing intermediate results
+    // create a memo -> responsible for storing intermediate results
     if(n < 0) {
         cout << "Invalid Input" << endl;
     } else {
