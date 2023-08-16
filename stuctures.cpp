@@ -51,30 +51,60 @@ int main() {
 
     // UNIONS :-
     // Note :- In union, the memory is shared between all the data types;
-    union loan {
-        int landProperty;           // 4
-        char netBanking;            // 1
-        char promoCode;             // 1
-        float cashAmount;           // 4
-        int marks[5];               // 20
-    };
+    // union loan {
+    //     int landProperty;           // 4
+    //     char netBanking;            // 1
+    //     char promoCode;             // 1
+    //     float cashAmount;           // 4
+    //     int marks[5];               // 20
+    // };
 
-    cout << sizeof(loan) << endl;
+    // cout << sizeof(loan) << endl;
 
-    // Reference for union
-    union loan loan1;
-    loan1.netBanking = 'C';
-    cout << loan1.netBanking << endl;           // 'C'
-    cout << loan1.marks[0] << endl;
-    loan1.marks[0] = 92;
-    cout << loan1.marks[0] << endl;
-    cout << loan1.netBanking << endl;           // Garbage Value
-    loan1.netBanking = 'Z';
-    cout << loan1.netBanking << endl;           // 'Z'
-    loan1.marks[1] = 67;
-    loan1.netBanking = 'B';
-    cout << loan1.marks[0] << endl;             // 92
-    cout << loan1.netBanking << endl;           // Garbage Value
+    // // Reference for union
+    // union loan loan1;
+    // loan1.netBanking = 'C';
+    // cout << loan1.netBanking << endl;           // 'C'
+    // cout << loan1.marks[0] << endl;
+    // loan1.marks[0] = 92;
+    // cout << loan1.marks[0] << endl;
+    // cout << loan1.netBanking << endl;           // Garbage Value
+    // loan1.netBanking = 'Z';
+    // cout << loan1.netBanking << endl;           // 'Z'
+    // loan1.marks[1] = 67;
+    // loan1.netBanking = 'B';
+    // cout << loan1.marks[0] << endl;             // 92
+    // cout << loan1.netBanking << endl;           // Garbage Value
+
+    // struct test {
+    //     int arr[5];
+    //     bool data5;
+    // } test1;
+    
+    // struct demo {
+    //     // data
+    //     int data1;
+    //     string data2;
+    //     struct test data10;
+    //     bool data3;
+    //     float data4;
+    // } demo1, demo2, demo3;
+
+    // demo1.data2 = "Hello World";
+    // cout << demo1.data2 << endl;
+
+
+    // ENUMS
+    // enum Day{ 0, 1, 2, 3, 4, ..... }
+    enum Day{ morning, afternoon, evening, night };
+    // refernce for the enum
+    // EnumName enumRef = refName
+    Day ref1 = morning;
+    cout << ref1 << endl;
+    // NOTE :- the value of the references starts with 0.
+    // enums are used for comparing values
+    if(ref1 == 0) cout << "Yes"; else cout << "False";
+    cout << afternoon << endl;
 
     return 0;
 }
