@@ -2,7 +2,20 @@
 using namespace std;
 
 int max_sum_subArray(int n, int arr[], int k) {
-    // WRITE YOUR CODE...
+    // create the first window and find the sum of the elements in the window.
+    // k = 3 | W1 :- index0 - index2
+    if(k > n) return -1;
+    int maxSum = 0;
+    for(int i=0; i < k; i++) {              // 0, 1, 2
+        maxSum += arr[i]; 
+    }
+    // maxSum = 3 + 1 + 4 = 8
+    int possibleAns = maxSum;
+    for(int i=k; i < n; i++) {
+        possibleAns = (possibleAns + arr[i]) - arr[i-k];           // W2 :- 12
+        maxSum = max(possibleAns, maxSum);
+    }
+    return maxSum;
 }
 
 int main() {
