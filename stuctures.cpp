@@ -96,15 +96,28 @@ int main() {
 
     // ENUMS
     // enum Day{ 0, 1, 2, 3, 4, ..... }
-    enum Day{ morning, afternoon, evening, night };
-    // refernce for the enum
-    // EnumName enumRef = refName
-    Day ref1 = morning;
-    cout << ref1 << endl;
-    // NOTE :- the value of the references starts with 0.
-    // enums are used for comparing values
-    if(ref1 == 0) cout << "Yes"; else cout << "False";
-    cout << afternoon << endl;
+    // enum Day{ morning = 1, afternoon = 0, evening = 13, night };
+    // // {morning: 0, afternoon: 1, evening: 2, night: 3}
+
+    // // refernce for the enum
+    // // EnumName enumRef = refName
+    // Day ref1 = morning;
+    // cout << ref1 << endl;
+
+    // Day ref2 = afternoon;
+    // cout << ref2 << endl;
+
+    // Day ref3 = evening;
+    // cout << ref3 << endl;
+
+    // Day ref4 = night;
+    // cout << ref4 << endl;
+    // // NOTE :- the value of the references starts with 0.
+    // // enums are used for comparing values
+    // // if(ref1 == 0) cout << "Yes"; else cout << "False";
+    // // cout << afternoon << endl;
+
+    // enum Month{ Jan=1, Feb, March, April, May, June, July, August, Sept, Oct, Nov, Dec };
 
     return 0;
 }
