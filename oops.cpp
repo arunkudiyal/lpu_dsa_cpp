@@ -31,12 +31,15 @@ int main() {
 
     // Object of a class :- Real-Life Entit built out of the class
     // Syntax :- ClassName objectName;
+    // demoObj.data1 = somOtheRData;
     Demo demoObj;
-    demoObj.setData1(100);                      // demoObj.data1 = random
-    demoObj.setData2("My_Demo_Object_1");
-    demoObj.setData3(false);
-    demoObj.setData4(3.14);
-    demoObj.display();
+    cout << demoObj.getData4() << endl;         // Garbage
+
+    // demoObj.setData1(100);                      // demoObj.data1 = random
+    // demoObj.setData2("My_Demo_Object_1");
+    // demoObj.setData3(false);
+    // demoObj.setData4(3.14);
+    // demoObj.display();
 
     return 0;
 }
