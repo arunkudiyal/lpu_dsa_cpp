@@ -8,6 +8,7 @@ using namespace std;
 // 3. Polymorphism :- Poly (many) + Morph (form) :- A member function in a class which has same name but different functionalities.
 // -> Types :- Complie Time :- i.) Function Overloading (same fn name; diff params) | ii.) Operator Overloading
 //             Run Time :- i.) virutual functions |
+// Inheritance :- ???
 
 class Bank {
     private:
