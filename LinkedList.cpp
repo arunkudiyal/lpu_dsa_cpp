@@ -1,0 +1,100 @@
+#include<iostream>
+using namespace std;
+
+class Node {
+    public:
+        int data;
+        Node* next;
+        // parameterised constructor
+        Node(int data) {
+            this->data = data;
+            this->next = NULL;
+        }
+};
+
+class LinkedList {
+    public:
+        Node* head;
+        LinkedList() {
+            this->head = NULL;
+        }
+
+        void append(int data) {
+            Node* newNode = new Node(data);
+            // LL is empty, this is the first Node getting created
+            if(this->head == NULL) {
+                this->head = newNode;
+                return;
+            }
+            // go to the end of the LL, and add the Node at the end.
+            Node* temp = head;
+            while(temp->next != NULL)
+                temp = temp->next;
+            temp->next = newNode;
+        }
+
+        void addAtStart(int data) {
+            Node* newNode = new Node(data);
+            if(this->head == NULL) {
+                this->head = newNode;
+                return;
+            }
+            Node* oldHead = head;
+            this->head = newNode;
+            this->head->next = oldHead;
+        }
+
+        void insertAfter(int data1, int data2) {
+            if(this->head == NULL) {
+                Node* newNode = new Node(data2);
+                cout << "List is Empty! Adding " << data2 << " at the start." << endl;
+                this->head = newNode;
+                return;
+            }
+            // search for data1
+            Node* temp = head;
+            while(temp->data != data1 && temp->next != NULL)
+                temp = temp->next;
+            // data1 is not in the LL ?
+            if(temp->data != data1) {
+                cout << data1 << " does not exist in the LinkedList. Aborting insertion." << endl;;
+                return;
+            }
+            // data1 found, adding a data2 after data1
+            Node* newNode = new Node(data2);
+            newNode->next = temp->next;
+            temp->next = newNode;
+        }
+
+        void printList() {
+            Node* temp = head;
+            while(temp != NULL) {
+                cout << temp->data << " ";
+                temp = temp->next;
+            }
+            cout << endl;
+        }
+};
+
+int main() {
+    LinkedList list = LinkedList();         // head = NULL;
+    
+    list.insertAfter(10, 1000);
+    list.printList();                       //  1000
+
+    list.append(100);
+    list.append(200);
+    list.append(300);
+    list.append(400);
+    list.append(500);
+    list.printList();                       // 1000 100 200 300 400 500
+
+    list.addAtStart(50);
+    list.printList();                       // 50 1000 100 200 300 400 500
+
+    list.insertAfter(2000, 600);            // Error Message | Not Found
+    list.printList();
+
+    list.insertAfter(200, 250);
+    list.printList();                       // 50 1000 100 200 250 300 400 500
+}
