@@ -19,6 +19,8 @@ class LinkedList {
             this->head = NULL;
         }
 
+        // INSERTION FUNCTIONS
+
         void append(int data) {
             Node* newNode = new Node(data);
             // LL is empty, this is the first Node getting created
@@ -66,6 +68,65 @@ class LinkedList {
             temp->next = newNode;
         }
 
+        // DELETION FUNCTIONS
+
+        void deleteFromStart() {
+            if(this->head == NULL) {
+                cout << "List is Empty! Aborting the deletion." << endl;
+                return;
+            }
+            // if there is only one Node
+            if(this->head->next == NULL) {
+                delete(head);
+                this->head = NULL;
+                return;
+            }
+            Node* temp = this->head;
+            this->head = head->next;
+            delete(temp);
+        }
+
+        void deleteFromEnd() {
+            if(this->head == NULL) {
+                cout << "List is Empty! Aborting the deletion." << endl;
+                return;
+            }
+            // if there is only one Node
+            if(this->head->next == NULL) {
+                delete(head);
+                this->head = NULL;
+                return;
+            }
+            Node* temp = this->head;
+            while(temp->next->next != NULL)
+                temp = temp->next;
+            delete(temp->next);
+            temp->next = NULL;
+        }
+
+        void deleteKey(int data) {
+            if(this->head == NULL) {
+                cout << "List is Empty! Aborting the deletion." << endl;
+                return;
+            }
+            // search for the data in the LL
+            Node* slow = this->head;
+            Node* temp = this->head;
+            while(temp->data != data && temp->next != NULL) {
+                slow = temp;
+                temp = temp->next;
+            }
+            // data is not in the LL ?
+            if(temp->data != data) {
+                cout << data << " does not exist in the LinkedList. Aborting deletion." << endl;;
+                return;
+            }
+            slow->next = temp->next;
+            delete(temp);
+        }
+
+        // PRINT STATEMENTS
+
         void printList() {
             Node* temp = head;
             while(temp != NULL) {
@@ -79,6 +140,9 @@ class LinkedList {
 int main() {
     LinkedList list = LinkedList();         // head = NULL;
     
+    list.deleteFromEnd();
+    list.deleteFromStart();
+
     list.insertAfter(10, 1000);
     list.printList();                       //  1000
 
@@ -97,4 +161,15 @@ int main() {
 
     list.insertAfter(200, 250);
     list.printList();                       // 50 1000 100 200 250 300 400 500
+
+    list.deleteFromStart();
+    list.printList();                       // 1000 100 200 250 300 400 500
+
+    list.deleteFromEnd();
+    list.printList();                       // 1000 100 200 250 300 400
+
+    list.deleteKey(2000);                   // Error Message | Not Found
+
+    list.deleteKey(200);
+    list.printList();                       // 1000 100 250 300 400
 }
