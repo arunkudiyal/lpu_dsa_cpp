@@ -125,6 +125,8 @@ class LinkedList {
             delete(temp);
         }
 
+        // Q1:- deleteElement(index);    |   EASY
+
         // PRINT STATEMENTS
 
         void printList() {
@@ -135,6 +137,8 @@ class LinkedList {
             }
             cout << endl;
         }
+
+        // Q2:- printReverse();         | Prints the elements from the Singly LL in reverse
 };
 
 int main() {
@@ -172,4 +176,8 @@ int main() {
 
     list.deleteKey(200);
     list.printList();                       // 1000 100 250 300 400
+
+    // list.deleteElement(0)                // 100 250 300 400
+
+    // list.printReverse();                 // 400 300 250 100
 }
