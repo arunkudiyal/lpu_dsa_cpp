@@ -139,11 +139,18 @@ class LinkedList {
         }
 
         // Q2:- printReverse();         | Prints the elements from the Singly LL in reverse
+        void printListReverse(Node* head) {
+            // base case
+            if(head == NULL) return;
+            // adding each Node to the stack of the compiler
+            printListReverse(head->next);
+            cout << head->data << " ";
+        }
 };
 
 int main() {
     LinkedList list = LinkedList();         // head = NULL;
-    
+
     list.deleteFromEnd();
     list.deleteFromStart();
 
@@ -180,4 +187,6 @@ int main() {
     // list.deleteElement(0)                // 100 250 300 400
 
     // list.printReverse();                 // 400 300 250 100
+    list.printListReverse(list.head);
+    cout << endl;
 }
