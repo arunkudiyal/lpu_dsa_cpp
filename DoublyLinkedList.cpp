@@ -15,17 +15,18 @@ class Node {
 
 class DoublyLinkedList {
     public:
-        Node* head; Node* tail;
+        Node* head;                                 // to point at the first node
+        Node* tail;                                 // to point at the last node
         DoublyLinkedList() {
             this->head = NULL;
             this->tail = NULL;
         }
 
         // INSERTION OPERATIONS
-
         void append(int data) {
-            Node* newNode = new Node(data);
+            Node* newNode = new Node(data);         
             if(this->head == NULL) {
+                // newNode is the first Node being creted
                 this->head = newNode;
                 this->tail = newNode;
                 return;
@@ -33,10 +34,12 @@ class DoublyLinkedList {
             Node* temp = this->head;
             while(temp->next != NULL)
                 temp = temp->next;
-            newNode->prev = temp;
             temp->next = newNode;
             this->tail = newNode;
+            // newNode.prev = NULL | newNode.next = NULL
+            newNode->prev = temp;
         }
+        
 
         // DISPLAY OPERATION
 
@@ -61,6 +64,7 @@ class DoublyLinkedList {
 
 int main() {
     DoublyLinkedList list = DoublyLinkedList();             // head = NULL | tail = NULL
+
     list.append(100);
     list.append(200);
     list.append(300);
@@ -71,3 +75,6 @@ int main() {
 
     return 0;
 }
+
+// 1. Take 5 mins, MEDITATE -> YouTube ? -> HaedSpace 
+// 2. Sit with a paper paper and try to solve the problem on the paper first 
