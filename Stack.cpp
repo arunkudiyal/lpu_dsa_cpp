@@ -25,6 +25,7 @@ class Stack {
             this->top = NULL;
         }
 
+        // T(n) = O(n) | Inserting the Node at the end of the LL
         void push(int data) {
             // Inserts the element at the top of the stack.
             Node* newNode = new Node(data);
@@ -45,6 +46,7 @@ class Stack {
             this->top = newNode;
         }
 
+        // T(n) = O(n) | Inserting the Node at the end of the LL
         void pop() {
             if(this->head == NULL) {
                 cout << "Stack Underflow" << endl;
@@ -63,6 +65,10 @@ class Stack {
             delete(temp->next);
             temp->next = NULL;
             this->top = temp;
+        }
+
+        bool isEmpty() {
+            return this->head == NULL;
         }
 
         int peek() {
