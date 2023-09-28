@@ -30,9 +30,9 @@ class BinarySearchTree {
         }
         void reverseInOrderTraversal(Node* root) {
             if(root != NULL) {
-                reverseInOrderTraversal(root->right);          // R
+                reverseInOrderTraversal(root->right);   // R
                 cout << root->data << " ";              // D
-                reverseInOrderTraversal(root->left);           // L
+                reverseInOrderTraversal(root->left);    // L
             }
         }
     public:
