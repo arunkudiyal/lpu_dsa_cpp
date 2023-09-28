@@ -21,7 +21,13 @@ class BinarySearchTree {
             else if(key > root->data) root->right = insertData(root->right, key);
             return root;
         }
+        // Order :- inOrder(LDR), preOrder(DLR), postOrder(LRD)
+        // Note:- No order which starts from right and end at left
+        // Q.1 :- Given an inOrder traversal, print the preOrder & postOrder | NOT POSSIBLE
+        // Q.2 :- Given an preOrder traversal, print the inOrder & postOrder | POSSIBLE
+        // Q.3 :- Given an postOrder traversal, print the preOrder & inOrder | POSSIBLE
         void inOrderTraversal(Node* root) {
+            // inOrder traversal of any BST is in Ascending Order.
             if(root != NULL) {
                 inOrderTraversal(root->left);           // L
                 cout << root->data << " ";              // D
