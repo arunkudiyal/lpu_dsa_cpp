@@ -41,6 +41,42 @@ class BinarySearchTree {
                 reverseInOrderTraversal(root->left);    // L
             }
         }
+        int find_min(Node* root) {
+            int minValue = root->data;
+            while(root->left != NULL) {
+                minValue = root->left->data;
+                root = root->left;
+            }
+            return minValue;
+        }
+        int find_max(Node* root) {
+            int maxValue = root->data;
+            while(root->right != NULL) {
+                maxValue = root->right->data;
+                root = root->right;
+            }
+            return maxValue;
+        }
+        // deleteData(Node* root, int key);
+        Node* deleteData(Node* root, int key) {
+            // search for any value in the bst & then attempt to delete
+            if(root == NULL) return NULL;
+            else if(key < root->data) root->left = deleteData(root->left, key);
+            else if(key > root->data) root->right = deleteData(root->right, key);
+            // this block will be implemented when the data is found.
+            else {
+                // case 1 -> if root->left is NULL then root->right (NULL) is returned.
+                // case 2 -> Node to be deleted has 1 child (L / R)
+                if(root->left == NULL) return root->right;
+                else if(root->right == NULL) return root->left;
+                // case 3:- root->left != root->right != NULL
+                else {
+                    root->data = find_min(root->right);
+                    root->right = deleteData(root->right, root->data);
+                }
+            }
+            return root;
+        }
     public:
         BinarySearchTree() {
             this->root = NULL;
@@ -56,6 +92,9 @@ class BinarySearchTree {
         void reverseInOrder() {
             reverseInOrderTraversal(this->root);
             cout << endl;
+        }
+        void del(int key) {
+            this->root = deleteData(this->root, key);
         }
 };
 
@@ -73,6 +112,18 @@ int main() {
     bst.insert(91);
     bst.inOrder();                              // 0 4 5 7 10 13 39 67 69 91
     bst.reverseInOrder();
+
+    bst.del(4);
+    bst.inOrder();                              // 0 5 7 10 13 39 67 69 91
+
+    bst.del(13);
+    bst.inOrder();                              // 0 5 7 10 39 67 69 91
+
+    bst.del(69);
+    bst.inOrder();                              // 0 5 7 10 39 67 91
+
+    bst.del(100);
+    bst.inOrder();                              // 0 5 7 10 39 67 91
 
     return 0;
 }
