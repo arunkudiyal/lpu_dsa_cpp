@@ -1,2 +1,0 @@
-Hey! Welcome to C++.
-C++ is fun!
