@@ -29,7 +29,7 @@ int main() {
     // // & store the value of the line in a seperate variable.
     // int count = 0;
     // while( getline(f_in, line) ) {
-    //     cout << line << endl;   
+    //     cout << line << endl;                        // priniting line-by-line
     //     count += 1;
     // }
     // cout << count << endl;                          // 2
@@ -73,6 +73,32 @@ int main() {
     // ifstream f_in("/Users/arunkudiyal/Desktop/lpu_dsa_cpp/document.txt");
     // f_in >> input;
     // cout << input << endl;              // This
+
+
+
+    // Random Access File Processing
+    // Q:- I want to write the content in the file but at a specific position
+    // read the values from a specific point(index)
+    ifstream if_in("/Users/arunkudiyal/Desktop/lpu_dsa_cpp/document.txt", ios::in );
+
+    // Q:- Generate an error if you are unable to open the file.
+    // Note- If opening any file is unsuccessful, the ref is not created
+    if(!if_in.is_open()) {
+        // cout << "Error Opening file" << endl;
+        // creating a 
+        cerr << "Error Opening file" << endl;
+    } else {
+        string data;
+        // define a position where I'll start reading the content
+        int position;
+        cin >> position;
+        // moves the reading pointer to the specified value; default = 0
+        if_in.seekg(position);
+        getline(if_in, data);
+        cout << data << endl;
+    }
+
+    // Research :- Start reading from a pos + end reading to a specifc pos 
 
     return 0;
 }
