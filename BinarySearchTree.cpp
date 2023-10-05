@@ -1,4 +1,6 @@
 #include<iostream>
+#include<math.h>
+#include<queue>
 using namespace std;
 
 class Node {
@@ -77,6 +79,53 @@ class BinarySearchTree {
             }
             return root;
         }
+        int getHeight(Node* root) {
+            if(root == NULL) return 0;
+            else {
+                int left_height = getHeight(root->left);
+                int right_height = getHeight(root->right);
+                return max(left_height, right_height) + 1;
+            }
+        }
+        int getHeight2(Node* root) {
+            // you no longer are allowed to use recursion. Use loops.
+            if(root == NULL) return 0;
+            // syntax :- queue<type> | queue<Node*>
+            queue<Node*> q;
+            // visit the BST for the first time
+            q.push(root);
+            int height = 0;
+            // [1, 6, 14]
+            while(!q.empty()) {
+                int n = q.size();
+                for(int i=0; i < n; i++) {
+                    Node* temp = q.front();
+                    if(temp->left != NULL) q.push(temp->left);
+                    if(temp->right != NULL) q.push(temp->right);
+                    // I have successfully visited the root
+                    q.pop();
+                }
+                height+=1;
+            } 
+            return height;
+        }
+        void levelOrderTraversal(Node* root) {
+            if(root == NULL) return;
+            queue<Node*> q;
+            q.push(root);
+            while(!q.empty()) {
+                int n = q.size();
+                for(int i=0; i < n; i++) {
+                    Node* temp = q.front();
+                    cout << temp->data << " ";
+                    if(temp->left != NULL) q.push(temp->left);
+                    if(temp->right != NULL) q.push(temp->right);
+                    // I have successfully visited the root
+                    q.pop();
+                }
+            }
+            cout << endl;
+        }
     public:
         BinarySearchTree() {
             this->root = NULL;
@@ -96,6 +145,9 @@ class BinarySearchTree {
         void del(int key) {
             this->root = deleteData(this->root, key);
         }
+        int height() { return getHeight(this->root); }
+        int height2() { return getHeight2(this->root); }
+        void levelOrder() { levelOrderTraversal(this->root); }
 };
 
 int main() {
@@ -111,6 +163,10 @@ int main() {
     bst.insert(69);
     bst.insert(91);
     bst.inOrder();                              // 0 4 5 7 10 13 39 67 69 91
+
+    cout << bst.height() << endl;               // 8    |    0   |     
+    cout << bst.height2() << endl;              // 8   
+
     bst.reverseInOrder();
 
     bst.del(4);
@@ -125,5 +181,7 @@ int main() {
     bst.del(100);
     bst.inOrder();                              // 0 5 7 10 39 67 91
 
-    return 0;
+    bst.levelOrder();
+
+    return 0; 
 }
