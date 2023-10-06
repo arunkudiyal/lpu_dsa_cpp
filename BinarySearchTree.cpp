@@ -148,6 +148,7 @@ class BinarySearchTree {
         int height() { return getHeight(this->root); }
         int height2() { return getHeight2(this->root); }
         void levelOrder() { levelOrderTraversal(this->root); }
+        int getLevels() { return getHeight(this->root) - 1; }
 };
 
 int main() {
