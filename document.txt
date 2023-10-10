@@ -3,4 +3,5 @@ This is a sample Line 2.
 This is a sample Line 3. 
 This is a sample Line 4. 
 This is a sample Line 5. 
-This is a sample Line 6. 
+This is a sample Line 6.
+Start of the file

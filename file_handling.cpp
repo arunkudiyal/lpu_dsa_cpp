@@ -77,28 +77,102 @@ int main() {
 
 
     // Random Access File Processing
-    // Q:- I want to write the content in the file but at a specific position
     // read the values from a specific point(index)
-    ifstream if_in("/Users/arunkudiyal/Desktop/lpu_dsa_cpp/document.txt", ios::in );
+    // ifstream if_in("/Users/arunkudiyal/Desktop/lpu_dsa_cpp/document.txt", ios::in );
 
-    // Q:- Generate an error if you are unable to open the file.
-    // Note- If opening any file is unsuccessful, the ref is not created
-    if(!if_in.is_open()) {
-        // cout << "Error Opening file" << endl;
-        // creating a 
-        cerr << "Error Opening file" << endl;
-    } else {
-        string data;
-        // define a position where I'll start reading the content
-        int position;
-        cin >> position;
-        // moves the reading pointer to the specified value; default = 0
-        if_in.seekg(position);
-        getline(if_in, data);
-        cout << data << endl;
-    }
+    // // Q:- Generate an error if you are unable to open the file.
+    // // Note- If opening any file is unsuccessful, the ref is not created
+    // if(!if_in.is_open()) {
+    //     // cout << "Error Opening file" << endl;
+    //     // creating a 
+    //     cerr << "Error Opening file" << endl;
+    // } else {
+    //     string data = "";
+    //     // define a position where I'll start reading the content
+    //     int position1;
+    //     int position2;
+    //     cin >> position1;
+    //     cin >> position2;
+    //     if(position2 > position1) {
+    //         int count = 0;
+    //         while(count != position2 - position1) {
+    //             // data += '';
+    //             if_in.seekg(position1 + 1);
+    //             // getline(if_in, data);
+    //             cout << data << endl;
+    //         }
+    //     } else {
+    //         cout << "Incompatible values of position1 & position2" << endl;
+    //     }
+        
+    // }
 
     // Research :- Start reading from a pos + end reading to a specifc pos 
+    // ifstream if_in("/Users/arunkudiyal/Desktop/lpu_dsa_cpp/document.txt", ios::in );
+    // if(!if_in.is_open()) {
+    //     cerr << "Error opening file!" << endl;
+    // } else {
+    //     int pos1; int pos2;
+    //     cin >> pos1;
+    //     cin >> pos2;
+    //     // reading pointer now starts from pos1
+    //     if_in.seekg(pos1);
+    //     int lengthOfContent = pos2 - pos1;
+    //     if(pos2 > pos1) {
+    //         // if the positions are valid, I will read the content.
+    //         char* contentRead = new char[lengthOfContent];
+    //         // .read(pointerToArrayOfString, lengthOfTheContentToRead) 
+    //         if_in.read(contentRead, lengthOfContent);
+    //         cout << contentRead << endl;
+    //     } else {
+    //         cout << "Invalid position values!";
+    //     }
+    // }
+
+    // Q2:- I wanted to read the entire content of the file using .read()
+    // Alternative - 1 :- use while() with getLine()
+    // ifstream if_in("/Users/arunkudiyal/Desktop/lpu_dsa_cpp/document.txt", ios::in );
+    // if(!if_in.is_open()) {
+    //     cerr << "Error opening file!" << endl;
+    // } else {
+    //     // seekg(position:int) :- places the pointer at the position
+    //     // seekg(offset, referenceOfReading) :-
+    //     // offset :- no of charachters or bytes to move in the file.
+    //     // reference :- beg, end, curr
+    //     if_in.seekg(0, ios::end);               // pointer :- 1
+    //     // get the length of the entire content [start = 0]
+    //     streampos fileSize = if_in.tellg();
+    //     if_in.seekg(0, ios::beg);
+    //     cout << fileSize << endl;
+
+    //     char* contentRead = new char[fileSize];
+    //     if_in.read(contentRead, fileSize);
+    //     cout << contentRead << endl;
+    // }
+
+    // ifstream if_in("/Users/arunkudiyal/Desktop/lpu_dsa_cpp/document.txt", ios::in );
+    // if(!if_in.is_open()) {
+    //     cerr << "return" << endl;
+    // } else {
+    //     if_in.seekg(10, ios::beg);
+    //     // current reading pointer :- 10th index
+    //     char ch;
+    //     while(if_in.get(ch)) {
+    //         cout << ch;
+    //     }
+    // }
+
+    // seekp() (offstream for writing) <--> seekg() (ifstream for reading)
+    ofstream of_out("/Users/arunkudiyal/Desktop/lpu_dsa_cpp/document.txt", ios::app);
+    if(!of_out.is_open()) {
+        cerr << "Error opening the file" << endl;
+    } else {
+        of_out.seekp(0, ios::end);
+        of_out << "Start of the file\n";
+        of_out.close();
+    }
+
+    // AGENDA :- appenending and writing the middle and the start.
 
     return 0;
 }
