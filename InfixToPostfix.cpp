@@ -14,8 +14,17 @@
 // '*' & '/' --> Second Least --> L to R
 // '^' --> Third Least --> a+b^c*d --> a+ bc^ *d --> a+ bc^d* -> abc^d*+
 // '()' --> Most priority --> (a + b) --> ab+ | (3+4) = 5; 3+4 = 34+
+
+// a+b*c --> a + bc* --> abc*+
+// stack = []       |   ouput = abc*+
 // stack = ['('] ; output = a
+// (a+b)/(c*d) --> ab+cd*/
+
+// a*b+c --> ab* + c --> ab*c+
+// stack = []       | output = ab*c+
+
 // () --> least, [] --> second least, {} --> highest
+
 #include<iostream>
 #include<stack>
 using namespace std;
@@ -44,10 +53,22 @@ void infixToPostfix(string input) {
             }
             // pop the ')'
             myStack.pop();
-        } else {
-            
+        } 
+        // if ch is the operator
+        else {
+            while(!myStack.empty() && getPriority(input[i]) <= getPriority(myStack.top())) {
+                output += myStack.top();
+                myStack.pop();
+            }
+            myStack.push(ch);
         }
     }
+    // nothing to read from the input :- pop the element & append it to the output
+    while(!myStack.empty()) {
+        output += myStack.top();
+        myStack.pop();
+    }
+    cout << output << endl;
 }
 
 int main() {
