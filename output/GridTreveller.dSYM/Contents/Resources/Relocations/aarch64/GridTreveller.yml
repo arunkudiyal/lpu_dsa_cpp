@@ -1,0 +1,13 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/arunkudiyal/Desktop/lpu_dsa_cpp/output/GridTreveller'
+relocations:
+  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: __Z13gridTravellerii, symObjAddr: 0x0, symBinAddr: 0x100003C04, symSize: 0xC4 }
+  - { offsetInCU: 0x4443, offset: 0x4443, size: 0x8, addend: 0x0, symName: __ZNSt3__14endlB7v160006IcNS_11char_traitsIcEEEERNS_13basic_ostreamIT_T0_EES7_, symObjAddr: 0x160, symBinAddr: 0x100003D64, symSize: 0x58 }
+  - { offsetInCU: 0x4483, offset: 0x4483, size: 0x8, addend: 0x0, symName: __ZNSt3__19use_facetB7v160006INS_5ctypeIcEEEERKT_RKNS_6localeE, symObjAddr: 0x244, symBinAddr: 0x100003E48, symSize: 0x2C }
+  - { offsetInCU: 0x6CFD, offset: 0x6CFD, size: 0x8, addend: 0x0, symName: __Z13gridTravellerii, symObjAddr: 0x0, symBinAddr: 0x100003C04, symSize: 0xC4 }
+  - { offsetInCU: 0x6D37, offset: 0x6D37, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0xC4, symBinAddr: 0x100003CC8, symSize: 0x70 }
+  - { offsetInCU: 0x6E1A, offset: 0x6E1A, size: 0x8, addend: 0x0, symName: __ZNSt3__113basic_ostreamIcNS_11char_traitsIcEEElsB7v160006EPFRS3_S4_E, symObjAddr: 0x134, symBinAddr: 0x100003D38, symSize: 0x2C }
+  - { offsetInCU: 0x6E4C, offset: 0x6E4C, size: 0x8, addend: 0x0, symName: __ZNKSt3__19basic_iosIcNS_11char_traitsIcEEE5widenB7v160006Ec, symObjAddr: 0x1B8, symBinAddr: 0x100003DBC, symSize: 0x8C }
+  - { offsetInCU: 0x6EB8, offset: 0x6EB8, size: 0x8, addend: 0x0, symName: __ZNKSt3__15ctypeIcE5widenB7v160006Ec, symObjAddr: 0x270, symBinAddr: 0x100003E74, symSize: 0x38 }
+...
