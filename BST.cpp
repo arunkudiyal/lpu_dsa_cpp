@@ -14,7 +14,8 @@ class Node {
     public:
         int data;
         Node* left; Node* right;
-        Node(int data) {
+        Node(const int& data) {
+            // data = data * 2;
             this->data = data;
             this->left = this->right = NULL;
         }
