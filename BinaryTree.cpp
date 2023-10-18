@@ -45,12 +45,12 @@ class BinaryTree {
         BinaryTree() {
             this->root = NULL;
         } 
-        void inOrderTraversal(TreeNode* root) {
+        void postOrderTraversal(TreeNode* root) {
             // inOrder traversal of any BST is in Ascending Order.
             if(root != NULL) {
-                inOrderTraversal(root->left);           // L
-                cout << root->data << " ";              // D
-                inOrderTraversal(root->right);          // R
+                postOrderTraversal(root->left);           // L
+                postOrderTraversal(root->right);          // R
+                cout << root->data << " ";                // D
             }
         }
 };
@@ -60,10 +60,12 @@ class BinaryTree {
 int main() {
     // Building the Binary Tree
     BinaryTree bt = BinaryTree();
-    bt.root = new TreeNode(5);
-    bt.root->right = new TreeNode(1);
-    bt.root->right->right = new TreeNode(2);
-    bt.inOrderTraversal(bt.root);           // 1 5 2
+    bt.root = new TreeNode(1);
+    bt.root->left = new TreeNode(3);
+    bt.root->right = new TreeNode(4);
+    bt.root->left->left = new TreeNode(5);
+    bt.root->left->right = new TreeNode(2);
+    bt.postOrderTraversal(bt.root);           // 1 5 2
     cout<< endl;
     return 0;
 }
