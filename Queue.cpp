@@ -4,9 +4,11 @@ using namespace std;
 class Node {
     public:
         int data;
+        int priority;
         Node* next;
         Node(int data) {
             this->data = data;
+            this->priority = 0;
             this->next = NULL;
         }
 };
@@ -30,6 +32,10 @@ class Queue {
             this->tail->next = newNode;
             this->tail = newNode;
             cout << newNode->data << " has been enqueued!" << endl;
+            // || newNode->priority <
+            // if(newNode->priority > head->priority) {
+
+            // } 
         }
         int deQueue() {
             if(this->head == NULL) {
