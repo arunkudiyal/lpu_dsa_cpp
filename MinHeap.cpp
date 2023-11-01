@@ -3,11 +3,15 @@ using namespace std;
 
 class MinHeap {
     public:
-        int* heap; int capacity; int size;
+        int* heap; int capacity; static int size;
         MinHeap(int capacity) {
             this->capacity = capacity;
             heap = new int[capacity];
             this->size = 0;
+
+            // If wanted, I can start my indexing from index 1.
+            // this->size = 1;
+            // this->heap[0] = INT_MIN; (min-heap)
         }
 
         int parent(int index) { return (index - 1) / 2; }
@@ -107,6 +111,10 @@ int main() {
     heap.insert(19);
     heap.insert(42);
     heap.insert(27);
+
+    // int cap;
+    // cin >> cap;
+    // MinHeap heap2(cap);
 
     heap.display();                                                 // 10 14 19 26 31 42 27 44 35 33
 
