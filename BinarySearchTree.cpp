@@ -73,6 +73,8 @@ class BinarySearchTree {
                 else if(root->right == NULL) return root->left;
                 // case 3:- root->left != root->right != NULL
                 else {
+                    // max-most from the left or find the min-most from the right. [ in-Order traversal ]
+                    // root->data = find_max(root->left);
                     root->data = find_min(root->right);
                     root->right = deleteData(root->right, root->data);
                 }

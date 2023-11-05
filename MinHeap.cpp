@@ -3,7 +3,7 @@ using namespace std;
 
 class MinHeap {
     public:
-        int* heap; int capacity; static int size;
+        int* heap; int capacity; int size;
         MinHeap(int capacity) {
             this->capacity = capacity;
             heap = new int[capacity];
@@ -102,33 +102,37 @@ class MinHeap {
 int main() {
     MinHeap heap(15);
     heap.insert(10);
-    heap.insert(14);
-    heap.insert(26);
-    heap.insert(44);
-    heap.insert(35);
-    heap.insert(33);
-    heap.insert(31);
-    heap.insert(19);
-    heap.insert(42);
-    heap.insert(27);
+    heap.insert(10);
+    heap.insert(10);
+    heap.insert(10);
+    heap.insert(10);
+    // heap.insert(33);
+    // heap.insert(31);
+    // heap.insert(19);
+    // heap.insert(42);
+    // heap.insert(27);
 
     // int cap;
     // cin >> cap;
     // MinHeap heap2(cap);
 
     heap.display();                                                 // 10 14 19 26 31 42 27 44 35 33
+    // 10 10 10 10 10
+
+    // heap.exatract();
+    // heap.display();                                                 // 14 19 26 31 42 27 44 35 33
+
+    // heap.reduce(0, 10);
+    // heap.display();                                                 // 10 19 26 31 42 27 44 35 33
+
+    // heap.reduce(3, 18);
+    // heap.display();                                                 // 10 18 26 19 42 27 44 35 33
+
+    // heap.reduce(4, 43);                                             // Error Message
+    // heap.display();                                                 // 10 18 26 19 42 27 44 35 33
 
     heap.exatract();
-    heap.display();                                                 // 14 19 26 31 42 27 44 35 33
-
-    heap.reduce(0, 10);
-    heap.display();                                                 // 10 19 26 31 42 27 44 35 33
-
-    heap.reduce(3, 18);
-    heap.display();                                                 // 10 18 26 19 42 27 44 35 33
-
-    heap.reduce(4, 43);                                             // Error Message
-    heap.display();                                                 // 10 18 26 19 42 27 44 35 33
+    heap.display();                                                     // 10 10 10 10
 
     return 0;
 }
