@@ -155,36 +155,43 @@ class BinarySearchTree {
 
 int main() {
     BinarySearchTree bst = BinarySearchTree();              // root = NULL
-    bst.insert(4);
-    bst.insert(7);
-    bst.insert(10);
-    bst.insert(13);
-    bst.insert(5);
-    bst.insert(39);
-    bst.insert(0);
-    bst.insert(67);
-    bst.insert(69);
-    bst.insert(91);
-    bst.inOrder();                              // 0 4 5 7 10 13 39 67 69 91
+    // bst.insert(4);
+    // bst.insert(7);
+    // bst.insert(10);
+    // bst.insert(13);
+    // bst.insert(5);
+    // bst.insert(39);
+    // bst.insert(0);
+    // bst.insert(67);
+    // bst.insert(69);
+    // bst.insert(91);
+    // bst.inOrder();                              // 0 4 5 7 10 13 39 67 69 91
 
-    cout << bst.height() << endl;               // 8    |    0   |     
-    cout << bst.height2() << endl;              // 8   
+    // cout << bst.height() << endl;               // 8    |    0   |     
+    // cout << bst.height2() << endl;              // 8   
 
-    bst.reverseInOrder();
+    // bst.reverseInOrder();
 
-    bst.del(4);
-    bst.inOrder();                              // 0 5 7 10 13 39 67 69 91
+    // bst.del(4);
+    // bst.inOrder();                              // 0 5 7 10 13 39 67 69 91
 
-    bst.del(13);
-    bst.inOrder();                              // 0 5 7 10 39 67 69 91
+    // bst.del(13);
+    // bst.inOrder();                              // 0 5 7 10 39 67 69 91
 
-    bst.del(69);
-    bst.inOrder();                              // 0 5 7 10 39 67 91
+    // bst.del(69);
+    // bst.inOrder();                              // 0 5 7 10 39 67 91
 
-    bst.del(100);
-    bst.inOrder();                              // 0 5 7 10 39 67 91
+    // bst.del(100);
+    // bst.inOrder();                              // 0 5 7 10 39 67 91
 
-    bst.levelOrder();
+    // bst.levelOrder();
+
+    bst.insert(100);
+    bst.insert(90);
+    bst.insert(80);
+    bst.insert(70);
+    bst.insert(60);
+    bst.inOrder();                                  // 100 100 100 100 100
 
     return 0; 
 }
