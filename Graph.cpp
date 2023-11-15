@@ -61,13 +61,13 @@ class Graph {
             }
             cout << endl;
         }
-
+        // DFSUtil(0, {F, F, F, F, ... , F})
         void DFSUtil(int start, bool visited[]) {
             int V = this->numVertices;
             visited[start] = true;
             cout << start << " ";
             for(int i=0; i < V; i++)
-                if(adjMatrix[start][i] == 1 && (!visited[i])) DFSUtil(i, visited);
+                if(adjMatrix[start][i] != 0 && (!visited[i])) DFSUtil(i, visited);
         }
 
         void DFS(int start) {
